@@ -1,0 +1,30 @@
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+   "name": "Enzo", 
+   "email": "enzo@gmail.com",
+   "password": "123456",
+   "role": "ADMIN"   
+}
+
+###
+POST http://localhost:3003/login
+Content-Type: application/json
+
+{   
+   "email": "enzo@gmail.com",
+   "password": "123456"
+}
+
+###
+POST http://localhost:3003/band/signup
+Content-Type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAzNzk4NDNlLWZiYzUtNDNlZi1hYjhlLWE3ZDNhYTAzYjhlMCIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1MjQ4ODE2NSwiZXhwIjoxNjUyNTc0NTY1fQ.kiTD8avbMlPUGNL1W5sVbMt5s7WzxtG9O5XIaUe91AA
+
+{
+   "name": "Slipknot",
+   "music_genre": "Heavy Metal",
+   "responsible": "Corey Taylor"
+}
+
