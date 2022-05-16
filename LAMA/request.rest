@@ -27,16 +27,3 @@ Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAzNzk4NDNlLWZiYzUtN
    "music_genre": "Heavy Metal",
    "responsible": "Corey Taylor"
 }
-
-###
-
-PUT http://localhost:3003/show/register
-Content-Type: application/json
-Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMyNGUxZDdhLWE2MTYtNDk0Mi1iZGE1LWE1OTgyMmUxZDQ1YiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1MjYzNTQ4NywiZXhwIjoxNjUyNzIxODg3fQ.nIMoJEbEn3MWMbmnIMQeEqJEHt46RjhsJUckG5a1EHs
-
-{
-   "week_day": "SEXTA",
-   "start_time": 9,
-   "end_time": 10, 
-   "band_id": "010203"
-}

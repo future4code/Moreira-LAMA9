@@ -2,19 +2,31 @@ import { IdGenerator } from "../services/IdGenerator";
 import { RegisterShowInputDTO } from "../types/registerShowInputDTO";
 import { Show, WEEK_DAY } from "../model/Show"
 import ShowData from "../data/ShowData";
+import { Authenticator } from "../services/Authenticator";
 
 export default class ShowBusiness {
   constructor(
     private idGenerator: IdGenerator,
-    private showData: ShowData
+    private showData: ShowData,
+    private authenticator: Authenticator
   ) { }
 
-  registerShow = async (input: RegisterShowInputDTO) => {
+  registerShow = async (input: RegisterShowInputDTO): Promise<void> => {
     //validação
-    const { week_day, start_time, end_time, band_id } = input
+    const { week_day, start_time, end_time, band_id, token } = input
 
     if (!week_day || !start_time || !end_time || !band_id) {
       throw new Error("All fields are required")
+    }
+
+    if (!token) {
+      throw new Error("Need to provide the user token")
+    }
+
+    //VALIDAR SE É ADMIN
+    const tokenData = this.authenticator.getTokenData(token)
+    if (tokenData.role !== "ADMIN") {
+      throw new Error("Access to admins only.")
     }
 
     //VALIDAR HORARIO DISPONIVEL PARA SHOW
@@ -47,5 +59,13 @@ export default class ShowBusiness {
 
     //inserir no banco
     await this.showData.insertShow(show)
+  }
+
+  getShowByDay = async (day: string) => {
+    if (day !== "SEXTA" && day !== "SABADO" && day !== "DOMINGO") {
+      throw new Error("Invalid day for query.")
+    }
+    const filteredShow = await this.showData.getShowByDay(day)
+    return filteredShow
   }
 }

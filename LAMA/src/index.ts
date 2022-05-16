@@ -8,6 +8,7 @@ import UserController from "./controller/UserController";
 import BandData from "./data/BandData";
 import ShowData from "./data/ShowData";
 import UserData from "./data/UserData";
+import { Authenticator } from "./services/Authenticator";
 import { IdGenerator } from "./services/IdGenerator";
 
 const userBusiness = new UserBusiness(
@@ -29,7 +30,8 @@ const bandController = new BandController(
 const showController = new ShowController(
     new ShowBusiness(
         new IdGenerator(),
-        new ShowData()
+        new ShowData(),
+        new Authenticator()
     )
 )
 
@@ -37,3 +39,4 @@ app.post("/user/signup", userController.signup)
 app.post("/login", userController.login)
 app.post("/band/signup", bandController.signup)
 app.post("/show", showController.registerShow)
+app.get("/show", showController.getShowByDay)

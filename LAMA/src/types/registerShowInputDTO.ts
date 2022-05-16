@@ -4,5 +4,6 @@ export type RegisterShowInputDTO = {
   week_day: WEEK_DAY,
   start_time: number,
   end_time: number,
-  band_id: string
+  band_id: string,
+  token: string
 }
