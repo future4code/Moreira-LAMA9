@@ -5,6 +5,7 @@
       "migrations": "tsnd ./src/data/migrations.ts"
    },
    "dependencies": {
+      "@types/dotenv": "^8.2.0",
       "bcryptjs": "^2.4.3",
       "cors": "^2.8.5",
       "dotenv": "^8.6.0",

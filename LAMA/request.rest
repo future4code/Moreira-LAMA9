@@ -27,4 +27,3 @@ Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAzNzk4NDNlLWZiYzUtN
    "music_genre": "Heavy Metal",
    "responsible": "Corey Taylor"
 }
-
