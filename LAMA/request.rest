@@ -2,9 +2,9 @@ POST http://localhost:3003/user/signup
 Content-Type: application/json
 
 {
-   "name": "Enzo", 
-   "email": "enzo@gmail.com",
-   "password": "123456",
+   "name": "Julia", 
+   "email": "juju@gmail.com",
+   "password": "abacate",
    "role": "ADMIN"   
 }
 
@@ -13,17 +13,32 @@ POST http://localhost:3003/login
 Content-Type: application/json
 
 {   
-   "email": "enzo@gmail.com",
-   "password": "123456"
+   "email": "juju@gmail.com",
+   "password": "abacate"
 }
 
 ###
 POST http://localhost:3003/band/signup
 Content-Type: application/json
-Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAzNzk4NDNlLWZiYzUtNDNlZi1hYjhlLWE3ZDNhYTAzYjhlMCIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1MjQ4ODE2NSwiZXhwIjoxNjUyNTc0NTY1fQ.kiTD8avbMlPUGNL1W5sVbMt5s7WzxtG9O5XIaUe91AA
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRlOGI2YzMzLWRlOTktNDQ3My04ZTU5LTk0ZjVlYjk3NzlmZiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1MzM5NzQ4MCwiZXhwIjoxNjUzNDgzODgwfQ.qtTccob9nXiNtMLEe_OXcj9Kf8zIpKjs29eVpeD0A0o
 
 {
-   "name": "Slipknot",
-   "music_genre": "Heavy Metal",
-   "responsible": "Corey Taylor"
+   "name": "Juju e os abacates",
+   "music_genre": "Rap",
+   "responsible": "Vovó Juju"
 }
+###
+POST http://localhost:3003/show
+Content-Type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRlOGI2YzMzLWRlOTktNDQ3My04ZTU5LTk0ZjVlYjk3NzlmZiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1MzM5NzQ4MCwiZXhwIjoxNjUzNDgzODgwfQ.qtTccob9nXiNtMLEe_OXcj9Kf8zIpKjs29eVpeD0A0o
+
+{
+  "week_day":"DOMINGO", 
+  "start_time":8, 
+  "end_time":9, 
+  "band_id":"99f251e6-5676-4e9f-9c21-dc288c44216e"
+}
+###
+GET http://localhost:3003/show/?week_day=DOMINGO
+Content-Type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRlOGI2YzMzLWRlOTktNDQ3My04ZTU5LTk0ZjVlYjk3NzlmZiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1MzM5NzQ4MCwiZXhwIjoxNjUzNDgzODgwfQ.qtTccob9nXiNtMLEe_OXcj9Kf8zIpKjs29eVpeD0A0o
